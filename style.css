@@ -70,3 +70,8 @@ canvas {
 #GameDiv {
   background: transparent;
 }
+
+/* Flap Duck: EditBox 의 HTML 입력창(position:absolute; bottom:0)이 게임 영역 기준으로 붙도록 */
+#Cocos3dGameContainer {
+  position: relative;
+}
