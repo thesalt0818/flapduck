@@ -35,12 +35,8 @@ body {
 
   cursor: default;
   color: #888;
-  /* Flap Duck: 게임 영역(9:16) 바깥은 title_bg_d.jpg 를 화면에 맞춰 확대해 깐다 */
-  background-color: #2b2f5a;
-  background-image: url("title_bg_d.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  /* Flap Duck: 로딩 중에는 검은 바탕만 (배경 이미지가 위에서부터 흐릿하게 그려지는 게 보이지 않게) */
+  background-color: #000;
   overflow: hidden;
 
   text-align: center;
@@ -48,6 +44,16 @@ body {
 
   display: flex;
   flex-direction: column;
+}
+
+/* Flap Duck: 첫 씬이 뜬 뒤(ScreenFit.ts 가 body 에 fd-ready 를 붙임) 게임 영역(9:16) 바깥에
+   title_bg_d.jpg 를 화면에 맞춰 확대해 깐다. 이미지는 index.html 에서 미리 받아 둔다. */
+body.fd-ready {
+  background-color: #2b2f5a;
+  background-image: url("title_bg_d.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 canvas {
